@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
     <meta charset="UTF-8">
-    <title>게시판</title>
+    <title>PHP 게시판</title>
     <link rel="stylesheet" type="text/css" href="/PHP_BOARD/css/style.css" />
 </head>
 <body>
@@ -17,6 +17,10 @@
                 </div>
                 <div class="wi_line"></div>
                 <div id="in_name">
+                    <textarea name="user_name" id="user_name" rows="1" cols="55" placeholder="작성자" maxlength="100" required></textarea>
+                </div>
+                <div class="wi_line"></div>
+                <div id="in_content">
                     <textarea name="post_content" id="post_content" placeholder="내용" required></textarea>
                 </div>
                 <div id="in_pw">
