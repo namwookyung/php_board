@@ -1,9 +1,9 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/PHP_BOARD/db.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/php_board/db.php"; ?>
 <!doctype html>
 <head>
     <meta charset="UTF-8">
     <title>PHP 게시판</title>
-    <link rel="stylesheet" type="text/css" href="/PHP_BOARD/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/php_board/css/style.css" />
 </head>
 <body>
     <div id="board_area">
@@ -36,10 +36,10 @@
                     } else {
                         while($board = $sql -> fetch_array()) {
                             // post_title 변수에 DB에서 가져온 title을 선택
-                            $title = $board["post_title"];
-                            if(strlen($title) > 30) {
+                            $post_title = $board["post_title"];
+                            if(strlen($post_title) > 30) {
                                 // title이 30을 넘어서면 ... 표시
-                                $title = str_replace($board["post_title"], mb_substr($board["post_title"], 0, 30, "utf-8")."...", $board["post_title"]);
+                                $post_title = str_replace($board["post_title"], mb_substr($board["post_title"], 0, 30, "utf-8")."...", $board["post_title"]);
                             }
                 ?>
                 <tr>
@@ -47,8 +47,8 @@
                         <?php echo $board['idx']; ?>
                     </td>
                     <td>
-                        <a href = "">
-                            <?php echo $title; ?>
+                        <a href = "/php_board/read.php?idx=<?php echo $board["idx"];?>">
+                            <?php echo $post_title; ?>
                         </a>
                     </td>
                     <td>
