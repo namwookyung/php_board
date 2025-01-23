@@ -12,58 +12,67 @@
         <table class="list-table">
             <thead>
                 <tr>
-                    <th width="50">번호</th>
-                    <th width="500">제목</th>
-                    <th width="150">글쓴이</th>
-                    <th width="100">작성일</th>
-                    <th width="75">조회수</th>
-                    <th width="75">좋아요</th>
-                    <th width="75">싫어요</th>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>글쓴이</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                    <th>좋아요</th>
+                    <th>싫어요</th>
                 </tr>
             </thead>
-            <?php
-            // php_board 테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
-            $sql = query("select * from php_board order by idx desc limit 0, 10");
-            while($board = $sql -> fetch_array()) {
-                // post_title 변수에 DB에서 가져온 title을 선택
-                $title = $board["post_title"];
-                if(strlen($title) > 30) {
-                    // title이 30을 넘어서면 ... 표시
-                    $title = str_replace($board["post_title"], mb_substr($board["post_title"], 0, 30, "utf-8")."...", $board["post_title"]);
-                }
-            }
-            ?>
             <tbody>
+                <?php
+                    // php_board 테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
+                    $sql = query("SELECT * FROM php_board ORDER BY idx DESC LIMIT 0, 10");
+
+                    if (!$sql) {
+                        die("쿼리 실행 오류: " . $db->error);
+                    }
+
+                    // 게시글이 있는지 확인
+                    if ($sql->num_rows == 0) {
+                        echo "<tr><td colspan='7' style='text-align: center;'>게시글이 없습니다.</td></tr>";
+                    } else {
+                        while($board = $sql -> fetch_array()) {
+                            // post_title 변수에 DB에서 가져온 title을 선택
+                            $title = $board["post_title"];
+                            if(strlen($title) > 30) {
+                                // title이 30을 넘어서면 ... 표시
+                                $title = str_replace($board["post_title"], mb_substr($board["post_title"], 0, 30, "utf-8")."...", $board["post_title"]);
+                            }
+                ?>
                 <tr>
-                    <td width="50">
+                    <td>
                         <?php echo $board['idx']; ?>
                     </td>
-                    <td width="500">
+                    <td>
                         <a href = "">
                             <?php echo $title; ?>
                         </a>
                     </td>
-                    <td width="150">
+                    <td>
                         <?php echo $board['user_name']; ?>
                     </td>
-                    <td width="100">
+                    <td>
                         <?php echo $board['post_date']; ?>
                     </td>
-                    <td width="75">
+                    <td>
                         <?php echo $board['post_views']; ?>
                     </td>
-                    <td width="75">
+                    <td>
                         <?php echo $board['post_good']; ?>
                     </td>
-                    <td width="75">
+                    <td>
                         <?php echo $board['post_bad']; ?>
                     </td>
                 </tr>
+                <?php } } ?>
             </tbody>
         </table>
         <div id="write_btn">
-            <a href="/page/board/write.php">
-                <button>글쓰기</button>
+            <a href="/php_board/page/board/write.php">
+                <button class="write_btn">글쓰기</button>
             </a>
         </div>
     </div>
