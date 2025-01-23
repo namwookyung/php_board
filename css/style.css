@@ -67,3 +67,36 @@ ul li {
     border: 1px solid yellowgreen;
     font-size: 16px;
 }
+
+/* 게시판 조회 */
+#btn_list {
+    display: inline-block;
+    float: right;
+}
+
+.home_btn {
+    padding:8px 20px 8px 20px;
+    color: #fff;
+    background-color: lavender;
+    border-radius: 5px;
+    border: 1px solid lavender;
+    font-size: 16px;
+}
+
+.modify_btn {
+    padding:8px 20px 8px 20px;
+    color: #fff;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    border: 1px solid cornflowerblue;
+    font-size: 16px;
+}
+
+.delete_btn {
+    padding:8px 20px 8px 20px;
+    color: #fff;
+    background-color: crimson;
+    border-radius: 5px;
+    border: 1px solid crimson;
+    font-size: 16px;
+}
