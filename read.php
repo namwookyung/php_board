@@ -1,11 +1,11 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/php_board/db.php";
+    include $_SERVER['DOCUMENT_ROOT']."/db.php";
 ?>
 <!doctype html>
 <head>
     <meta charset="UTF-8">
     <title>PHP 게시판</title>
-    <link rel="stylesheet" type="text/css" href="/php_board/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
 <body>
     <?php

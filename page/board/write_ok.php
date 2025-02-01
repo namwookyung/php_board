@@ -1,5 +1,5 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/PHP_BOARD/db.php";
+    include $_SERVER['DOCUMENT_ROOT']."/db.php";
 
     // 각 변수에 write.php에서 input name 값들을 저장
     $user_name = $_POST['user_name'];
@@ -11,7 +11,7 @@
         $sql = query("INSERT INTO php_board(user_name, user_pw, post_title, post_content, post_date) values('".$user_name."', '".$user_pw."', '".$post_title."', '".$post_content."', '".$post_date."')");
         echo "<script>
         alert('작성 완료');
-        location.href='/PHP_BOARD/index.php';
+        location.href='/index.php';
         </script>";
     } else {
         echo "<script>

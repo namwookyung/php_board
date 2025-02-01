@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <title>PHP 게시판</title>
-    <link rel="stylesheet" type="text/css" href="/PHP_BOARD/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
 <body>
     <div id="board_write">

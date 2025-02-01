@@ -1,9 +1,9 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/php_board/db.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/db.php"; ?>
 <!doctype html>
 <head>
     <meta charset="UTF-8">
     <title>PHP 게시판</title>
-    <link rel="stylesheet" type="text/css" href="/php_board/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
 <body>
     <div id="board_area">
@@ -47,7 +47,7 @@
                         <?php echo $board['idx']; ?>
                     </td>
                     <td>
-                        <a href = "/php_board/read.php?idx=<?php echo $board["idx"];?>">
+                        <a href = "/read.php?idx=<?php echo $board["idx"];?>">
                             <?php echo $post_title; ?>
                         </a>
                     </td>
@@ -71,7 +71,7 @@
             </tbody>
         </table>
         <div id="write_btn">
-            <a href="/php_board/page/board/write.php">
+            <a href="/page/board/write.php">
                 <button class="write_btn">글쓰기</button>
             </a>
         </div>
