@@ -3,9 +3,11 @@
 
 /* 전체 옵션 */
 * {
-    margin : 0 auto;
-    padding : 0;
     font-family : "Noto Sans KR", serif;
+}
+
+body {
+    width: 90% !important;
 }
 
 a {
@@ -28,7 +30,7 @@ ul li {
 
 /* 게시판 목록 */
 #board_area {
-    width: 1500px;
+    width: 100%;
     position: relative;
 }
 
@@ -43,6 +45,10 @@ ul li {
     border-bottom: 1px solid #CCC;
     font-weight: bold;
     font-size: 17px;
+}
+
+.list-table tbody {
+    border-bottom: 1px solid #CCC;
 }
 
 .list-table tbody td {
@@ -69,17 +75,22 @@ ul li {
 }
 
 /* 게시판 조회 */
+#board_read {
+    width: 100%;
+    position: relative;
+}
+
 #btn_list {
-    display: inline-block;
+    /* display: inline-block; */
     float: right;
 }
 
 .home_btn {
     padding:8px 20px 8px 20px;
     color: #fff;
-    background-color: lavender;
+    background-color: yellowgreen;
     border-radius: 5px;
-    border: 1px solid lavender;
+    border: 1px solid yellowgreen;
     font-size: 16px;
 }
 
