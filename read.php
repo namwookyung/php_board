@@ -25,7 +25,7 @@
                         let response = JSON.parse(xhr.responseText);
                         if(response.success) {
                             document.getElementById("thumb_up_count").innerText = response.up;
-                            document.getElenentById("thumb_down_count").innerText = response.down;
+                            document.getElementById("thumb_down_count").innerText = response.down;
                         } else {
                             alert("오류 발생 : " + response.message);
                         }
