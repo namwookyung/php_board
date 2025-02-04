@@ -31,7 +31,7 @@
                         }
                     }
                 };
-                xhr.send("action = " + action + "&idx=" + idx);
+                xhr.send("action=" + action + "&idx=" + idx);
             }
         </script>
     </head>
@@ -59,22 +59,22 @@
             <div style="justify-content:space-around; display:flex;">
                 <ul style="padding:0; margin:0;">
                     <li>
-                        <button onclick="updateThumb('up', <?php echo $board['idx'];?>" style="border:none; background:none; cursor:pointer;">
+                        <button onclick="updateThumb('up', <?php echo $board['idx'];?>)" style="border:none; background:none; cursor:pointer;">
                             <img src="icon/thumbs-up-regular.svg" width=24px height=24px />
                         </button>
                     </li>
                     <li style="text-align:center;">
-                        <span><?php echo $board['post_up']; ?></span>
+                        <span id="thumb_up_count"><?php echo $board['post_up']; ?></span>
                     </li>
                 </ul>
                 <ul style="padding:0; margin:0;">
                     <li>
-                        <button onclick="updateThumb('down', <?php echo $board['idx'];?>" style="border:none; background:none; cursor:pointer;">
+                        <button onclick="updateThumb('down', <?php echo $board['idx'];?>)" style="border:none; background:none; cursor:pointer;">
                             <img src="icon/thumbs-down-regular.svg" width=24px height=24px />
                         </button>
                     </li>
                     <li style="text-align:center;">
-                        <span><?php echo $board['post_down']; ?></span>
+                        <span id="thumb_down_count"><?php echo $board['post_down']; ?></span>
                     </li>
                 </ul>
             </div>
