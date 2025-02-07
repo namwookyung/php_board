@@ -35,6 +35,9 @@
                     <input type="password" name="user_pw" id="user_pw" placeholder="비밀번호" required
                         style="border:1px solid lightgray; padding:10px; border-radius:5px; width:100%;"/>
                 </div>
+                <div id="in_lock" style="font-size: 14px;">
+                    <input type="checkbox" value="1" name="post_lock" />해당 글을 잠급니다.
+                </div>
                 <hr />
                 <div class="bt_se" style="text-align:right;">
                     <button style="padding:8px 20px 8px 20px; color: #fff; background-color: skyblue;

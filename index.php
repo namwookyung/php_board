@@ -1,14 +1,14 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/db.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/php_board/db.php"; ?>
 <!doctype html>
 <head>
     <meta charset="UTF-8">
     <title>PHP 게시판</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/php_board/css/style.css" />
 </head>
 <body>
     <div id="board_area">
         <h1>자유게시판</h1>
-        <h4>자유롭게 글을 쓸 수 있는 게시판입니다.</h4>
+        <h4>PHP로 만든 간단한 게시판입니다.</h4>
         <table class="list-table">
             <thead>
                 <tr>
@@ -47,9 +47,12 @@
                         <?php echo $board['idx']; ?>
                     </td>
                     <td>
-                        <a href = "/read.php?idx=<?php echo $board["idx"];?>">
-                            <?php echo $post_title; ?>
-                        </a>
+                        <?php $lockimg = "<img src='icon/lock-solid.svg' alt='lock' title='lock' width='16' height='16' />";
+                        if($board['post_lock'] == "1") {
+                            ?><a href="/php_board/page/board/ck_read.php?idx=<?php echo $board['idx'];?>"><?php echo $post_title, $lockimg;
+                        } else {
+                            ?>
+                            <a href="/php_board/page/board/read.php?idx=<?php echo $board["idx"];?>"><?php echo $post_title;}?></a>
                     </td>
                     <td>
                         <?php echo $board['user_name']; ?>
@@ -61,17 +64,17 @@
                         <?php echo $board['post_views']; ?>
                     </td>
                     <td>
-                        <?php echo $board['post_good']; ?>
+                        <?php echo $board['post_up']; ?>
                     </td>
                     <td>
-                        <?php echo $board['post_bad']; ?>
+                        <?php echo $board['post_down']; ?>
                     </td>
                 </tr>
                 <?php } } ?>
             </tbody>
         </table>
         <div id="write_btn">
-            <a href="/page/board/write.php">
+            <a href="/php_board/page/board/write.php">
                 <button class="write_btn">글쓰기</button>
             </a>
         </div>

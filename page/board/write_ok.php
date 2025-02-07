@@ -10,9 +10,16 @@
     $post_title = $_POST['post_title'];
     $post_content = $_POST['post_content'];
     $post_date = date('Y-m-d H:i:s');
+
+    if(isset($_POST['post_lock'])) {
+        $post_lock = '1';
+    } else {
+        $post_lock = '0';
+    }
+
     if($user_name && $user_pw && $post_title && $post_content) {
-        $sql = query("INSERT INTO php_board(user_name, user_pw, post_title, post_content, post_date)
-        values('".$user_name."', '".$user_pw."', '".$post_title."', '".$post_content."', '".$post_date."')");
+        $sql = query("INSERT INTO php_board(user_name, user_pw, post_title, post_content, post_date, post_lock)
+        values('".$user_name."', '".$user_pw."', '".$post_title."', '".$post_content."', '".$post_date."', '".$post_lock."')");
         echo "<script>
             alert('작성 완료');
             location.href='/php_board/index.php';
