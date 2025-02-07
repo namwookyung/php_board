@@ -37,6 +37,12 @@
                         while($board = $sql -> fetch_array()) {
                             // post_title 변수에 DB에서 가져온 title을 선택
                             $post_title = $board["post_title"];
+
+                            // 댓글 수 불러오기
+                            $con_idx = $board['idx'];
+                            $reply_cnt = query("SELECT COUNT(*) AS reply_cnt FROM reply WHERE reply_cnt = $con_idx");
+                            $con_reply_count = $reply_cnt -> fetch_array();
+
                             if(strlen($post_title) > 30) {
                                 // title이 30을 넘어서면 ... 표시
                                 $post_title = str_replace($board["post_title"], mb_substr($board["post_title"], 0, 30, "utf-8")."...", $board["post_title"]);
@@ -49,10 +55,10 @@
                     <td>
                         <?php $lockimg = "<img src='icon/lock-solid.svg' alt='lock' title='lock' width='16' height='16' />";
                         if($board['post_lock'] == "1") {
-                            ?><a href="/php_board/api/board/ck_read.php?idx=<?php echo $board['idx'];?>"><?php echo $post_title, $lockimg;
+                            ?><a href="/php_board/api/board/ck_read.php?idx=<?php echo $board['idx'];?>"><?php echo $post_title,"[".$con_reply_count["reply_cnt"]."]", $lockimg;
                         } else {
                             ?>
-                            <a href="/php_board/page/board/read.php?idx=<?php echo $board["idx"];?>"><?php echo $post_title;}?></a>
+                            <a href="/php_board/page/board/read.php?idx=<?php echo $board["idx"];?>"><?php echo $post_title."[".$con_reply_count["reply_cnt"]."]";}?></a>
                     </td>
                     <td>
                         <?php echo $board['user_name']; ?>
