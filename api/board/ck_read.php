@@ -31,7 +31,7 @@ if(isset($_POST['pw_chk'])) {   // 만약 pw_chk POST 값이 있다면
         $pwk == $user_pw;
         ?>
         <script type="text/javascript">
-            location.replace("read.php?idx=<?php echo $board['idx']; ?>");
+            location.replace("/php_board/page/board/read.php?idx=<?php echo $board['idx']; ?>");
         </script>   <!-- pwk와 user_pw 값이 같으면 read.php로 보냄 -->
         <?php
     } else {

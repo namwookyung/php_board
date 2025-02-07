@@ -49,7 +49,7 @@
                     <td>
                         <?php $lockimg = "<img src='icon/lock-solid.svg' alt='lock' title='lock' width='16' height='16' />";
                         if($board['post_lock'] == "1") {
-                            ?><a href="/php_board/page/board/ck_read.php?idx=<?php echo $board['idx'];?>"><?php echo $post_title, $lockimg;
+                            ?><a href="/php_board/api/board/ck_read.php?idx=<?php echo $board['idx'];?>"><?php echo $post_title, $lockimg;
                         } else {
                             ?>
                             <a href="/php_board/page/board/read.php?idx=<?php echo $board["idx"];?>"><?php echo $post_title;}?></a>

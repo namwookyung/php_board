@@ -10,14 +10,14 @@
             function deleteConfirm(idx){
                 isConfirm = confirm('삭제하시겠습니까?');
                 if(isConfirm == true) {
-                    var url="delete.php?idx=" + idx;
+                    var url="/php_board/api/board/delete.php?idx=" + idx;
                     location.href = url;
                 }
             }
 
             function updateThumb(action, idx) {
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "thumb_update.php", true);
+                xhr.open("POST", "/php_board/api/board/thumb_update.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = function() {
@@ -101,7 +101,7 @@
                     ?>
                     <div class="dap_lo">
                         <div>
-                            <b><?php echo $reply['user_name'];?></b>
+                            <b><?php echo $reply['reply_name'];?></b>
                         </div>
                         <div class="dap_to comt_edit"><?php echo nl2br("$reply[reply_content]");?></div>
                         <div class="rep_me dap_to"><?php echo $reply['reply_date'];?></div>
@@ -111,10 +111,10 @@
                         </div>
                         <!-- 댓글 수정 -->
                         <div class="dat_edit">
-                            <form method="post" action="/php_board/rep_modify_ok.php">
+                            <form method="post" action="/php_board/api/board/rep_modify_ok.php">
                                 <input type="hidden" name="reply_no" value="<?php echo $reply['idx'];?>" />
                                 <input type="hidden" name="post_no" value="<?php echo $post_no;?>" />
-                                <input type="password" name="user_pw" class="dap_sm" placeholder="비밀번호" />
+                                <input type="password" name="reply_pw" class="dap_sm" placeholder="비밀번호" />
                                 <textarea name="reply_content" class="dap_edit_t">
                                     <?php echo $reply['reply_content'];?>
                                 </textarea>
@@ -123,11 +123,11 @@
                         </div>
                         <!-- 댓글 삭제 비밀번호 -->
                         <div class="dat_delete">
-                            <form action="/php_board/reply_delete.php" method="post">
+                            <form action="/php_board/api/board/reply_delete.php" method="post">
                                 <input type="hidden" name="reply_no" value="<?php echo $reply['idx'];?>" />
                                 <input type="hidden" name="post_no" value="<?php echo $post_no;?>" />
                                 <p>비밀번호
-                                    <input type="password" name="user_pw" />
+                                    <input type="password" name="reply_pw" />
                                     <input type="submit" value="확인">
                                 </p>
                             </form>
@@ -137,12 +137,12 @@
 
                 <!-- 댓글 입력 -->
                 <div class="dap_ins">
-                    <form action="/php_board/reply_ok.php?idx=<?php echo $post_no; ?>" method="post">
-                        <input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="아이디" />
-                        <input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="비밀번호" />
+                    <form action="/php_board/api/board/reply_ok.php?idx=<?php echo $post_no; ?>" method="post">
+                        <input type="text" name="reply_name" id="reply_name" class="reply_name" size="15" placeholder="아이디" />
+                        <input type="password" name="reply_pw" id="reply_pw" class="reply_pw" size="15" placeholder="비밀번호" />
                         <div style="margin-top:10px;">
-                            <textarea name="reply_content" class="reply_content" id="re_content"></textarea>
-                            <button id="rep_bt" class="re_bt">댓글</button>
+                            <textarea name="reply_content" class="reply_content" id="reply_content"></textarea>
+                            <button id="reply_btn" class="reply_btn">댓글 달기</button>
                         </div>
                     </form>
                 </div>

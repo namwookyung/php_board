@@ -17,7 +17,7 @@
             </h1>
             <h4>글을 수정합니다.</h4>
             <div id="write_area">
-                <form action="modify_ok.php?idx=<?php echo $post_no; ?>" method="post">
+                <form action="/php_board/api/board/modify_ok.php?idx=<?php echo $post_no; ?>" method="post">
                     <div id="in_title">
                         <textarea name="post_title" id="utitle" rows="1" cols="55" placeholder="제목목" maxlength="100" required><?php echo $board['post_title']; ?></textarea>
                     </div>
