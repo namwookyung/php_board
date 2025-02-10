@@ -1,7 +1,7 @@
 <?php
     include $_SERVER['DOCUMENT_ROOT']."/php_board/db.php";
-    $post_no = $_GET['idx'];
-    $sql = query("SELECT * FROM php_board WHERE idx='$post_no';");
+    $post_no = $_GET['post_idx'];
+    $sql = query("SELECT * FROM post WHERE post_idx='$post_no';");
     $board = $sql -> fetch_array();
 ?>
 <!doctype html>
@@ -17,7 +17,7 @@
             </h1>
             <h4>글을 수정합니다.</h4>
             <div id="write_area">
-                <form action="/php_board/api/board/modify_ok.php?idx=<?php echo $post_no; ?>" method="post">
+                <form action="/php_board/api/post/modify_ok.php?post_dx=<?php echo $post_no; ?>" method="post">
                     <div id="in_title">
                         <textarea name="post_title" id="utitle" rows="1" cols="55" placeholder="제목목" maxlength="100" required><?php echo $board['post_title']; ?></textarea>
                     </div>

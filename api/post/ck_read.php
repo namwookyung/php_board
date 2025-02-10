@@ -11,8 +11,8 @@ include $_SERVER['DOCUMENT_ROOT']."/php_board/db.php";
     });
     </script>
     <?php
-    $post_no = $_GET['idx'];
-    $sql = query("SELECT * FROM php_board WHERE idx = '".$post_no."'");
+    $post_no = $_GET['post_idx'];
+    $sql = query("SELECT * FROM post WHERE post_idx = '".$post_no."'");
     $board = $sql -> fetch_array();
 
     ?>
@@ -31,7 +31,7 @@ if(isset($_POST['pw_chk'])) {   // 만약 pw_chk POST 값이 있다면
         $pwk == $user_pw;
         ?>
         <script type="text/javascript">
-            location.replace("/php_board/page/board/read.php?idx=<?php echo $board['idx']; ?>");
+            location.replace("/php_board/page/post/read.php?post_idx=<?php echo $board['post_idx']; ?>");
         </script>   <!-- pwk와 user_pw 값이 같으면 read.php로 보냄 -->
         <?php
     } else {

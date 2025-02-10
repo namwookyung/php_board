@@ -18,7 +18,7 @@
     }
 
     if($user_name && $user_pw && $post_title && $post_content) {
-        $sql = query("INSERT INTO php_board(user_name, user_pw, post_title, post_content, post_date, post_lock)
+        $sql = query("INSERT INTO post(user_name, user_pw, post_title, post_content, post_date, post_lock)
         values('".$user_name."', '".$user_pw."', '".$post_title."', '".$post_content."', '".$post_date."', '".$post_lock."')");
         echo "<script>
             alert('작성 완료');

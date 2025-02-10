@@ -16,7 +16,7 @@
         </h1>
         <h4>글을 작성하는 공간입니다.</h4>
         <div id="write_area">
-            <form action="/php_board/api/board/write_ok.php" method="post" onsubmit="return isConfirm();">
+            <form action="/php_board/api/post/write_ok.php" method="post" onsubmit="return isConfirm();">
                 <div id="in_title">
                     <textarea name="post_title" id="post_title" rows="1" cols="55" placeholder="제목" maxlength="100" required
                         style="border:1px solid lightgray; padding:10px; border-radius:5px; width:100%;"></textarea>
