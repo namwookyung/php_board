@@ -1,0 +1,45 @@
+/* 게시판 목록 */
+#board_area {
+    width: 100%;
+    position: relative;
+}
+
+.list-table {
+    margin-top: 40px;
+    border-top: 2px solid yellowgreen;
+    width: 100%;
+}
+
+.list-table thead th {
+    height: 50px;
+    border-bottom: 1px solid #CCC;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.list-table tbody {
+    border-bottom: 1px solid #CCC;
+}
+
+.list-table tbody td {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #CCC;
+    height: 30px;
+    font-size: 15px;
+}
+
+#write_btn {
+    position: absolute;
+    margin-top: 20px;
+    right: 0;
+}
+
+.write_btn {
+    padding:8px 20px 8px 20px;
+    color: #fff;
+    background-color: yellowgreen;
+    border-radius: 5px;
+    border: 1px solid yellowgreen;
+    font-size: 16px;
+}
