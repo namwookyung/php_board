@@ -92,6 +92,7 @@ ul li {
     border-radius: 5px;
     border: 1px solid yellowgreen;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .modify_btn {
@@ -101,6 +102,7 @@ ul li {
     border-radius: 5px;
     border: 1px solid cornflowerblue;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .delete_btn {
@@ -110,4 +112,5 @@ ul li {
     border-radius: 5px;
     border: 1px solid crimson;
     font-size: 16px;
+    cursor: pointer;
 }
