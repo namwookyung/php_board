@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>PHP 게시판</title>
     <link rel="stylesheet" type="text/css" href="/php_board/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/php_board/css/idx.css" />
 </head>
 <body>
     <div id="board_area">
@@ -118,6 +119,7 @@
                 } else {
                     echo "<li><a href='?page=1'>처음</a></li>"; // 아니라면 처음 글자에 1번 페이지로 갈 수 있게 링크
                 }
+                
                 if($page <= 1){ // 만약 page가 1보다 작거나 같다면 빈값
 
                 } else {
